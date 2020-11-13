@@ -15,9 +15,8 @@ import { appReducer } from './store/reducers/app.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-// const routes = 
 @NgModule({
   declarations: [
     AppComponent,
