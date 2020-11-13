@@ -28,7 +28,7 @@ export class AuthEffects {
             catchError(error => of(new LogInFailure({ error })))
         );
 
-    @Effect()
+    @Effect({dispatch: false})
     LogInSuccess: Observable<any> = this.actions.pipe(
         ofType(AuthActionTypes.LOGIN_SUCCESS),
         tap((user) => {
@@ -37,13 +37,13 @@ export class AuthEffects {
         })
     );
 
-    @Effect()
+    @Effect({dispatch: false})
     LogInFailure: Observable<any> = this.actions.pipe(
       ofType(AuthActionTypes.LOGIN_FAILURE),
       tap(er => {console.log('Error', er); })
     );
 
-    @Effect()
+    @Effect({dispatch: false})
     public LogOut: Observable<any> = this.actions.pipe(
         ofType(AuthActionTypes.LOGOUT),
         tap((user) => {
